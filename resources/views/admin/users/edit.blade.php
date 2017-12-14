@@ -5,7 +5,7 @@
 
 <h1> Edit User </h1>
 <div class="col-sm-3">
-<img class="img-responsive img-rounded" src="{{$user->photo ? $user->photo->file : '/images/male_user.jpg'}}"/>
+<img class="img-responsive img-rounded" src="{{$user->photo ? '/user_dp/'.$user->photo->file : '/images/male_user.jpg'}}"/>
 </div>
 
 <div class="col-sm-9">

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class AddPhotoCoumnToUsers extends Migration
 {
@@ -25,7 +26,7 @@ class AddPhotoCoumnToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('photo_id');
+		$table->dropColumn('photo_id');
         });
     }
 }
