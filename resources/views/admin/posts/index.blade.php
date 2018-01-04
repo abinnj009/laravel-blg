@@ -13,6 +13,7 @@
 <th>Photo</th>
 <th>Title</th>
 <th>Body</th>
+<th> Comments</td>
 <th>Created At</th>
 <th>Updated </th>
 </tr>
@@ -26,7 +27,8 @@
 <td> {{$post->category_id ? $post->category->name : 'Uncategorized'}}</td>
 <td><img height=100 src="{{ $post->photo ? '/post_images/'.$post->photo->file : '/images/no_image.jpg' }}"/></td>
 <td> {{$post->title }}</td>
-<td> {{ str_limit($post->body, 15) }} </td>
+<td> <a href="{{ route('home.post', $post->id) }}"> {{ str_limit($post->body, 15) }} </a> </td>
+<td> <a href="{{ route('admin.comments.show', $post->id) }}">View Comments  </a>
 <td> {{$post->created_at }}</td>
 <td> {{$post->updated_at->diffForHumans() }} </td>
 </tr>
